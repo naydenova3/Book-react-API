@@ -28,7 +28,7 @@ class Book extends React.Component {
       book = this.state.book;
     } else {
       book = books.filter(b => b.id === id)[0];
-      console.log(book);
+      // console.log(book);
     }
     if (book === undefined) {
       return <Loading />;
@@ -46,7 +46,7 @@ class Book extends React.Component {
           </div>
         );
       } catch (error) {
-        console.log(error);
+        // console.log(error);
         return (
           <div className="row">
             <div className="col-md-6">
