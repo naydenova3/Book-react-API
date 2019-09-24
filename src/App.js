@@ -7,6 +7,7 @@ import FilterLeft from "./components/FilterLeft";
 import SideBar from './sidebar';
 import Book from "./components/Book";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import FetchComp from "./components/FetchComp";
 
 class App extends React.Component {
   constructor() {
@@ -21,23 +22,11 @@ class App extends React.Component {
     if (text === this.state.category || text === undefined) {
       return;
     }
-    this.makeFetch(text);
+  
   };
-
-  makeFetch(category = "JavaScript") {
-    //let url = `http://localhost:15350/api/category/all`;
-    let url = `http://localhost:15350/api/category/${category}`;
-    fetch(url)
-      .then(response => response.json())
-      .then(jsonResponse =>
-        //{console.log(jsonResponse)}
-        this.setState({ books: jsonResponse, category: category })
-      );
-  }
 
   render() {
     const books = this.state.books;
-    console.log(books);
     return (
       <Router>
         <div>
@@ -45,10 +34,10 @@ class App extends React.Component {
             search={this.handleSearch}
             currentCategory={this.state.category}
           />
-           <FilterLeft />
-           <SideBar />
-           <div id="page-wrap">
-            <h1>SideBar menu</h1>
+          <FilterLeft />
+          <SideBar />
+          <div id="page-wrap">
+            <h1>SideBar menu</h1>           
           </div>
           <Switch>
             <Route
@@ -62,6 +51,7 @@ class App extends React.Component {
                   search={this.handleSearch}
                 />
               )}
+
             />
             <Route
               path="/:category"
@@ -80,6 +70,8 @@ class App extends React.Component {
               render={props => <Book {...props} books={books} />}
             />
           </Switch>
+          <FetchComp/>
+
         </div>
       </Router>
     );

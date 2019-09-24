@@ -5,7 +5,7 @@ import Loading from "./Loading";
 class Details extends React.Component {
   componentDidMount() {
     const category = this.props.match.params;
-    console.log(category);
+    // console.log(category);
     if (category === undefined) {
       this.props.search("JavaScript");
     } else {
@@ -14,7 +14,7 @@ class Details extends React.Component {
   }
   render() {
     const books = this.props.books;
-    console.log(books);
+    // console.log(books);
     const listItems = books.map(book => (
       <BookDetails bookDetails={book} key={book.id} />
     ));
