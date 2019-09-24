@@ -4,6 +4,7 @@ import { slide as Menu } from 'react-burger-menu';
 export default props => {
   return (
     <Menu>
+      <div className="book-categories">BOOK CATEGORIES</div> 
       <a className="menu-item" href="/">
         Home
       </a>

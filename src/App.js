@@ -4,6 +4,7 @@ import "./style.css";
 import Details from "./components/Details";
 import Menu from "./components/Menu";
 import FilterLeft from "./components/FilterLeft";
+import Categories from "./components/Categories";
 import SideBar from './sidebar';
 import Book from "./components/Book";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -31,7 +32,7 @@ class App extends React.Component {
       .then(response => response.json())
       .then(jsonResponse =>
         //{console.log(jsonResponse)}
-        this.setState({ books: jsonResponse, category: category })
+       this.setState({ books: jsonResponse, category: category })
       );
   }
 
@@ -45,11 +46,14 @@ class App extends React.Component {
             search={this.handleSearch}
             currentCategory={this.state.category}
           />
-           <FilterLeft />
+          <Categories />
            <SideBar />
+           <FilterLeft />
            <div id="page-wrap">
             <h1>SideBar menu</h1>
+            
           </div>
+
           <Switch>
             <Route
               path="/"

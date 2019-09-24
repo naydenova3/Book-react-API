@@ -47,7 +47,6 @@ form {
 }
 
 
-
 .nav-link {
   color: #fff !important;
   font-size: 1.5em !important;
@@ -62,11 +61,9 @@ form {
 }
 
 
-
-
 #sidebar.active {
-min-width: 100px;
-max-width: 100px;
+min-width: 120px;
+max-width: 120px;
 
 
 }
@@ -80,20 +77,20 @@ border: 0.05em solid #17a2b8;
 
 
 #sidebar.active .sidebar-header h3 {
-display: none;
+  display: none;
 }
 
 .sidebar-header {
-text-align: center;
-margin-bottom: 1em;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 .filter-comp li a {
-color: #fff;
-text-align: center;
-font-size: 1.05em;
-text-decoration: none;
-margin-bottom: 1em;
+  color: #fff;
+  text-align: center;
+  font-size: 1.15em;
+  text-decoration: none;
+  margin-bottom: 1.2em;
 }
 
 .filter-comp li a:hover {
@@ -124,9 +121,9 @@ translateX(50%) works with right: 50%
 to accurately  center the arrow */
 #sidebar.active .dropdown-toggle::after {
 top: auto;
-bottom: 10px;
-right: 50%;
-transform: translateX(50%);
+bottom: 40px;
+right: 100%;
+transform: translateX(100%);
 }
 
 #sidebarCollapse {
@@ -136,18 +133,17 @@ background: #011933;
 }
 
 #sidebarCollapse span {
-width: 80%;
-height: 2px;
-margin: 0 auto;
-display: block;
-background: #555;
-
+  width: 80%;
+  height: 2px;
+  margin: 0 auto;
+  display: block;
+  background: #555;
 }
 
 
 #sidebarCollapse span:nth-of-type(2) {
 /* second one is not visible */
-opacity: 0;
+  opacity: 0;
 }
 
 
@@ -156,27 +152,30 @@ opacity: 0;
 transform: none;
 /* all bars are visible */
 opacity: 1;
-margin: 5px auto;
+margin: 15px auto;
 }
 
 .wrapper {
-display: flex;
+top: 300px;
+left: 1200px;
+  display: flex;
 align-items: stretch;
-perspective: 1500px;
+perspective: 3500px;
 }
 
 #sidebar {
-min-width: 200px;
-max-width: 20px;
+margin-left: 106em;
+min-width: 220px;
+max-width: 220px;
 background-color: #011933;
 color: #fff;
 padding: 1em;
 transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
-transform-origin: center left; /* Set the transformed position of sidebar to center left side. */
+transform-origin: center left; /* Set the transformed position of sidebar to center right side. */
 }
 
 #sidebar.active {
-margin-left: -250px;
+margin-left: -220px;
 }
 
 #load {

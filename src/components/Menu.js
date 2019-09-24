@@ -42,14 +42,7 @@ class Menu extends React.Component {
     });
     return (
       <nav className="navbar navbar-expand-lg bgNav">
-        <nav className="navbar">
-          <div className="container-fluid">
-              <button type="button" id="sidebarCollapse" className="btn btn-info">
-                <i className="fa fa-filter  fa-lg"></i>
-              </button>
-            </div>
-        </nav>
-        <span className="navbar-brand">Book Catalog</span>
+        
         <button
           className="navbar-toggler"
           type="button"
@@ -59,13 +52,20 @@ class Menu extends React.Component {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon">Category</span>
         </button>
-
+        <span className="navbar-brand ">Book Catalog</span>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">{actualListItems}</ul>
           <SearchForm search={this.handleSearch} />
         </div>
+        <nav className="navbar">
+          <div className="container-fluid">
+              <button type="button" id="sidebarCollapse" className="btn btn-info">
+                <i className="fa fa-filter  fa-lg"></i>
+              </button>
+            </div>
+        </nav>
       </nav>
     );
   }

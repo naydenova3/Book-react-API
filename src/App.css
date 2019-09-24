@@ -13,6 +13,10 @@
 }
 
 
+.navbar-brand {
+  margin: 0 100px !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -67,18 +71,18 @@
 
 .bm-burger-button {
   position: fixed;
-  padding: 1.2em;
+  
   width: 36px;
   height: 30px;
   left: 30px;
-  top: 25px;
-  color: #fff;
+  top: 17px;
+  
   border: 0.05em solid #17a2b8;
   
 }
 
 .bm-burger-bars {
-  background: #011933;
+  background-color: #fff !important;
 }
 
 .bm-cross-button {
@@ -106,4 +110,12 @@
 
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+.book-categories {
+  text-align: center;
+  font-weight: bold;
+  padding: 1em 0;
+  margin-bottom: 2em;
+  border: 0.1em solid #17a2b8;
 }
