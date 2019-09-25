@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Loading from './Loading';
+import noimage from "../noimage.png";
 
 
 class FetchComp extends Component {
@@ -10,30 +12,39 @@ class FetchComp extends Component {
     };
   }
   //api call
-  fetchBooks(){
-    fetch("http://localhost:15350/api/book/all")
-      .then(response => response.json())
-      .then(data => {
-         this.setState({books: data})
-        })
-      .catch(err => {
-        console.log(err);
-      })
+  // fetchBooks(){
+  //   fetch("http://localhost:15350/api/book/all")
+  //     .then(response => response.json())
+  //     .then(data => {
+  //        this.setState({books: data,})
+  //       })
+  //     .catch(err => {
+  //       console.log(err);
+  //     })
+  // }
+
+
+  // 
+  makeFetch(category = "Java") {
+    let url = `http://localhost:15350/api/book/category/${category}`;
+    fetch(url)
+    .then(response => response.json())
+    .then(data => 
+      this.setState({ books: data, category: category.name}))  
   }
-
-
   componentDidMount() {
-    this.fetchBooks();
+    this.makeFetch();
   }
 
 
   render() {
     const array = this.state.books;
-    console.log(array);
     let list = array.map(book =>
         <div key={book.id}>
           <div className="container"> 
           <img src={book.imageLink} />
+          <h1>{book.title}</h1>
+          
           </div>
         </div>        
     )
@@ -44,4 +55,8 @@ class FetchComp extends Component {
     )
   }
 }
+
+
+
+
 export default FetchComp;
