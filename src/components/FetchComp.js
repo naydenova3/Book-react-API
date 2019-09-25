@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Loading from './Loading';
-import noimage from "../noimage.png";
+import noimage from "../noimage.jpg";
 
 
 class FetchComp extends Component {
@@ -25,7 +25,7 @@ class FetchComp extends Component {
 
 
   // 
-  makeFetch(category = "Java") {
+  makeFetch(category = "Angular") {
     let url = `http://localhost:15350/api/book/category/${category}`;
     fetch(url)
     .then(response => response.json())
@@ -40,16 +40,16 @@ class FetchComp extends Component {
   render() {
     const array = this.state.books;
     let list = array.map(book =>
-        <div key={book.id}>
-          <div className="container"> 
-          <img src={book.imageLink} />
-          <h1>{book.title}</h1>
+        
+          <div key={book.id} className="col-sm-2 display-books"> 
+          <img src={book.imageLink} height="170px" width="130px" alt={noimage} />
+          <h6>{book.title}</h6>
           
           </div>
-        </div>        
+               
     )
     return ( 
-      <div>
+      <div className="container">
         {list}
       </div>
     )
