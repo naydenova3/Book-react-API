@@ -9,6 +9,7 @@ import SideBar from './sidebar';
 import Book from "./components/Book";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import FetchComp from "./components/FetchComp";
+import SearchForm from "./components/SearchForm"
 
 class App extends React.Component {
   constructor() {
@@ -50,6 +51,7 @@ class App extends React.Component {
           </div>
 
           <Switch>
+
             <Route
               path="/"
               exact
