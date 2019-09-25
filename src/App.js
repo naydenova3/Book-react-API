@@ -4,7 +4,7 @@ import "./style.css";
 import Details from "./components/Details";
 import Menu from "./components/Menu";
 import FilterLeft from "./components/FilterLeft";
-import Categories from "./components/Categories";
+
 import SideBar from './sidebar';
 import Book from "./components/Book";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -15,7 +15,7 @@ class App extends React.Component {
     super();
     this.state = {
       books: [],
-      category: ""
+      category: {}
     };
   }
 
@@ -23,8 +23,9 @@ class App extends React.Component {
     if (text === this.state.category || text === undefined) {
       return;
     }
-  
+
   };
+
 
   render() {
     const books = this.state.books;
@@ -35,12 +36,9 @@ class App extends React.Component {
             search={this.handleSearch}
             currentCategory={this.state.category}
           />
-          <FilterLeft />
           <SideBar />
-          <div id="page-wrap">
-            <h1>SideBar menu</h1>           
-          </div>
-
+          <FilterLeft />
+          <FetchComp />
           <Switch>
             <Route
               path="/"
@@ -72,7 +70,7 @@ class App extends React.Component {
               render={props => <Book {...props} books={books} />}
             />
           </Switch>
-          <FetchComp/>
+          
 
         </div>
       </Router>

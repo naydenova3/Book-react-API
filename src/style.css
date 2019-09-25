@@ -9,7 +9,8 @@ body {
   background-size: cover;
 }
 
-.col-sm-3 {
+.col-sm-2 {
+  display: inline-block;
   border-radius: 15px;
   border: solid 1px gainsboro;
   margin: 0 2em 2em 0;

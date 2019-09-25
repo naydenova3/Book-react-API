@@ -9,7 +9,7 @@
 }
 
 .container {
-  margin-top: 12em;
+  margin: 5em 0 0 25em;
 }
 
 
@@ -60,7 +60,7 @@
   display: inline-block;
   text-decoration: none;
   margin-bottom: 10px;
-  color: #17a2b8;
+  color: #fff;
   transition: color 0.2s;
 }
 
@@ -72,12 +72,11 @@
 .bm-burger-button {
   position: fixed;
   
-  width: 36px;
-  height: 30px;
+  width: 32px;
+  height: 28px;
   left: 30px;
-  top: 17px;
-  
-  border: 0.05em solid #17a2b8;
+  top: 20px;
+  border: 0.05em solid transparent;
   
 }
 

@@ -31,14 +31,14 @@ class FetchComp extends Component {
     const array = this.state.books;
     console.log(array);
     let list = array.map(book =>
-        <div key={book.id}>
-          <div className="container"> 
+        
+          <div key={book.id} className="col-sm-2"> 
           <img src={book.imageLink} />
           </div>
-        </div>        
+               
     )
     return ( 
-      <div>
+      <div className="container">
         {list}
       </div>
     )

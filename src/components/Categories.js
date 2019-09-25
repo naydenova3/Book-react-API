@@ -20,12 +20,12 @@ class Categories extends React.Component {
           let categories = data.map((category) => {
               return(
                   <div key={category.id}>
-                    {this.state.categories}
+                    {category.name}
                   </div>
               )
           })
-          this.setState({categories: categories});
-          console.log("state", this.state.categories)
+          this.setState({categories: category.name});
+          
       })
   }
 
@@ -35,7 +35,7 @@ class Categories extends React.Component {
     
     return (
         <div>
-            <div>{this.state.categories}</div>
+            <div>{categories}</div>
         </div>
     //   <Router>
     //     <div>

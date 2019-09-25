@@ -27,19 +27,20 @@ class BookDetails extends React.Component {
         return (
           <div className="col-sm-3">
             <img
-              src={book.volumeInfo.imageLinks.thumbnail}
+              src={book.imageLink}
               height="170px"
               width="130px"
               alt={noimage}
             />
             <Link to={link}>
               <p className="title-name" onClick={this.activateToogle}>
-                Title: {book.volumeInfo.title}
+                Title: {book.title}
               </p>
             </Link>
             <ul>
-              <li>Publisher: {book.volumeInfo.publisher}</li>
-              <li>{book.volumeInfo.pageCount} pages</li>
+              <li>Subtitle: {book.subtitle}</li>
+              <li>Publisher: {book.publisher}</li>
+              <li>{book.pageCount} pages</li>
             </ul>
           </div>
         );
@@ -47,14 +48,14 @@ class BookDetails extends React.Component {
         return (
           <div className="col-sm-3">
             <img
-              src={book.volumeInfo.imageLinks.thumbnail}
+              src={book.imageLink}
               height="170px"
               width="130px"
               alt={noimage}
             />
             <Link to={link}>
               <p className="title-name" onClick={this.activateToogle}>
-                Title: {book.volumeInfo.title}
+                Subttile: {book.subtitle}
               </p>
             </Link>
           </div>
@@ -68,12 +69,12 @@ class BookDetails extends React.Component {
             <img src={noimage} height="170px" width="130px" alt={noimage} />
             <Link to={link}>
               <p className="person-name" onClick={this.activateToogle}>
-                Title: {book.volumeInfo.title}
+                Title: {book.title}
               </p>
             </Link>
             <ul>
-              <li>Publisher: {book.volumeInfo.publisher}</li>
-              <li>{book.volumeInfo.pageCount} pages</li>
+              <li>Publisher: {book.publisher}</li>
+              <li>{book.pageCount} pages</li>
             </ul>
           </div>
         );
@@ -83,7 +84,7 @@ class BookDetails extends React.Component {
             <img src={noimage} height="170px" width="130px" alt={noimage} />
             <Link to={link}>
               <p className="title-name" onClick={this.activateToogle}>
-                Title: {book.volumeInfo.title}
+                Title: {book.title}
               </p>
             </Link>
           </div>
