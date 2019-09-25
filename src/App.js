@@ -23,9 +23,16 @@ class App extends React.Component {
     if (text === this.state.category || text === undefined) {
       return;
     }
-
+  // this.makeFetch(text);
   };
 
+  // makeFetch(category = "JavaScript") {
+  //   let url = "http://localhost:15350/api/book/category/{JavaScript}";
+  //   fetch(url)
+  //   .then(response => response.json())
+  //   .then(jsonResponse => 
+  //     this.setState({ books: jsonResponse.items, category: category}))
+  // }
 
   render() {
     const books = this.state.books;

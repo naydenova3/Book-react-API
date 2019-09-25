@@ -50,7 +50,20 @@
   border: 0.02em solid #fff;
 }
 
-                          /*                Here is the style of the sidebar menu                         */
+.display-books {
+    height: 320px;
+    width: 220px;
+    color: #fff;
+}
+
+.display-books img {
+  height: 170px;
+  width: 130px;
+  margin: 3px 3px 10px;
+  border: 0.1em solid #fff;
+}
+
+                          /*                Style of the sidebar menu                         */
 #page-wrap {
   text-align: center;
   overflow: auto;
