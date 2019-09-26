@@ -70,8 +70,8 @@ class App extends React.Component {
               )}
             />
             <Route
-              // path="/book/:bookUrl"
-              // render={props => <Book {...props} books={books} />}
+              path="/book/:bookUrl"
+              render={props => <Book {...props} books={books} />}
             />
           </Switch>
         </div>
