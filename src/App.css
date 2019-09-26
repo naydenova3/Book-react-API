@@ -55,6 +55,7 @@
 }
 
 .display-books {
+    position: relative; 
     height: 300px;
     width: 220px;
     color: #fff;
@@ -68,6 +69,7 @@
 }
 
 .display-books p {
+  position: absolute;
   max-height: 80px;
   min-height: 80px;
   font-size: 1em;

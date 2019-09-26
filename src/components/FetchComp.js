@@ -35,7 +35,7 @@ class FetchComp extends Component {
     const array = this.state.books;
 
     let list = array.map(book =>
-      <div key={book.id} className="col-sm-2 display-books">
+      <div key={book.id} className="col-xl-4 col-lg-3 col-md-4 col-sm-2 display-books">
         {/* Pop up box with description when click on image */}
         <Popup trigger={<img src={book.imageLink} id="myImg" height="170px" width="130px" alt={noimage}></img>} modal>
           <div className="popup" onScroll="myFunc">
