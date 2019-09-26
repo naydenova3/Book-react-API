@@ -40,12 +40,12 @@ class FetchComp extends Component {
   render() {
     const array = this.state.books;
     let list = array.map(book =>
-        
-          <div key={book.id} className="col-sm-2 display-books"> 
-          <img src={book.imageLink} height="170px" width="130px" alt={noimage} />
-          <h6>{book.title}</h6>
-          
-          </div>
+      <div className="card" key={book.id} className="col-xl-4 col-lg-3 col-md-4 col-sm-2 display-books" >
+        <img src={book.imageLink} alt={noimage} />
+        <div className="card-body">
+          <p className="card-text">{book.title}</p>
+        </div>
+      </div> 
                
     )
     return ( 

@@ -14,7 +14,6 @@ class Details extends React.Component {
   }
   render() {
     const books = this.props.books;
-    console.log(books);
     const listItems = books.map(book => (
       <BookDetails bookDetails={book} key={book.id} />
     ));

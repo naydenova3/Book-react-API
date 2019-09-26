@@ -8,10 +8,6 @@
   pointer-events: none;
 }
 
-.container {
-  margin: 5em 0 0 25em;
-}
-
 
 .navbar-brand {
   margin: 0 100px !important;
@@ -49,19 +45,30 @@
 .thought hr {
   border: 0.02em solid #fff;
 }
+            /*             Display books            */
+.container {
+  margin: 5em 0 0 25em;
+}
 
 .display-books {
-    height: 320px;
+    height: 300px;
     width: 220px;
     color: #fff;
 }
 
 .display-books img {
-  height: 170px;
-  width: 130px;
+  height: 130px;
+  width: 5em;
   margin: 3px 3px 10px;
   border: 0.1em solid #fff;
 }
+
+.display-books p {
+  max-height: 80px;
+  min-height: 80px;
+  font-size: 1em;
+}
+
 
                           /*                Style of the sidebar menu                         */
 #page-wrap {
@@ -130,4 +137,13 @@
   padding: 1em 0;
   margin-bottom: 2em;
   border: 0.1em solid #17a2b8;
+}
+
+.dropdown-container {
+  margin-left: 2em;
+
+}
+
+.fa {
+  margin-right: 1em;
 }

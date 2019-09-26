@@ -1,33 +1,49 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
+import Category from './components/Category';
 
-export default props => {
+class SideBar extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      category: [],
+    };
+  }
+
+
+  makeFetch() {
+      fetch(`http://localhost:15350/api/category/all`)
+      .then(results => {
+          return results.json();
+      }).then(data => 
+          this.setState({category: data})
+          
+      )
+    }
+    componentDidMount() {
+      this.makeFetch();
+    }
+
+  render() {
+    const categList = this.state.category;
+    let listItem = categList.map(n => {
+      return <Category key={n.id} current={n} />
+    }) ;
+
+        
+
+  
   return (
     <Menu>
       <div className="book-categories">BOOK CATEGORIES</div> 
-      <a className="menu-item" href="/">
-        Home
-      </a>
+      <div>
+        {listItem}
+      </div>
 
-      <a className="menu-item" href="/laravel">
-        Laravel
-      </a>
-
-      <a className="menu-item" href="/angular">
-        Angular
-      </a>
-
-      <a className="menu-item" href="/react">
-        React
-      </a>
-
-      <a className="menu-item" href="/vue">
-        Vue
-      </a>
-
-      <a className="menu-item" href="/node">
-        Node
-      </a>
     </Menu>
   );
-};
+  }
+}
+
+export default SideBar;

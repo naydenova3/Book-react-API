@@ -6,36 +6,36 @@ class Categories extends React.Component {
   constructor() {
     super();
     this.state = {
-      categories: "",
+      category: [],
     };
   }
 
 
-  componentDidMount() {
+  makeFetch() {
       fetch(`http://localhost:15350/api/category/all`)
       .then(results => {
           return results.json();
-      }).then(data => {
+      }).then(data => 
+          this.setState({category: data})
           
-          let categories = data.map((category) => {
-              return(
-                  <div key={category.id}>
-                    {category.name}
-                  </div>
-              )
-          })
-          this.setState({categories: category.name});
-          
-      })
-  }
-
+      )
+    }
+    componentDidMount() {
+      this.makeFetch();
+    }
 
   render() {
-    
-    
+    const categList = this.state.category;
+    console.log(categList);
+    let listItem = categList.map(d =>
+      <div key={d.id} >
+        {d.name}
+      </div> 
+               
+    )
     return (
         <div>
-            <div>{categories}</div>
+            {listItem}
         </div>
     //   <Router>
     //     <div>

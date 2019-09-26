@@ -4,8 +4,8 @@ import "./style.css";
 import Details from "./components/Details";
 import Menu from "./components/Menu";
 import FilterLeft from "./components/FilterLeft";
-
-import SideBar from './sidebar';
+import Categories from "./components/Categories";
+import SideBar from './SideBar';
 import Book from "./components/Book";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import FetchComp from "./components/FetchComp";
@@ -26,13 +26,7 @@ class App extends React.Component {
   // this.makeFetch(text);
   };
 
-  // makeFetch(category = "JavaScript") {
-  //   let url = "http://localhost:15350/api/book/category/{JavaScript}";
-  //   fetch(url)
-  //   .then(response => response.json())
-  //   .then(jsonResponse => 
-  //     this.setState({ books: jsonResponse.items, category: category}))
-  // }
+ 
 
   render() {
     const books = this.state.books;
@@ -46,6 +40,7 @@ class App extends React.Component {
           <SideBar />
           <FilterLeft />
           <FetchComp />
+          
           <Switch>
             <Route
               path="/"
