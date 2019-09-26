@@ -29,6 +29,10 @@
   margin: 0;
 }
 
+.mr-auto {
+  margin-right: 2em;
+}
+
 .thought {
   font-family: georgia, sans-serif;
   color: #fff;

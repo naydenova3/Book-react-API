@@ -3,20 +3,40 @@ import SearchForm from "./SearchForm";
 import MenuListItem from "./MenuListItem";
 
 class Menu extends React.Component {
-  
+  constructor() {
+    super();
+    this.state = {
+      category: [],
+    };
+  }
+
+
+  makeFetch() {
+      fetch(`http://localhost:15350/api/category/all`)
+      .then(results => {
+          return results.json();
+      }).then(data => 
+          this.setState({category: data})
+          
+      )
+    }
+    componentDidMount() {
+      this.makeFetch();
+    }
+
   handleSearch = text => {
     this.props.search(text);
   };
 
   render() {
-    const listItemsText = [
-      { name: "JavaScript", categoryId: 1 },
-      { name: "Java", categoryId: 2 },
-      { name: "React", categoryId: 3 },
-      { name: "Web", categoryId: 4 },
-      { name: "C++", categoryId: 5 },
-      { name: "Angular", categoryId: 6 }
-    ];
+    const listItemsText = this.state.category; 
+    console.log(listItemsText);
+    let listItem = listItemsText.map(d =>
+      <div>
+        {d.name}
+      </div>         
+    )
+
     const currentCategory = this.props.currentCategory;
     const actualListItems = listItemsText.map(item => {
       const category = "/" + item.name;
@@ -52,7 +72,6 @@ class Menu extends React.Component {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon">Category</span>
         </button>
         <span className="navbar-brand ">Book Catalog</span>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
