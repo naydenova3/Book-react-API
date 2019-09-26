@@ -59,22 +59,21 @@
     height: 300px;
     width: 220px;
     color: #fff;
+    position: relative;
 }
 
 .display-books img {
-  height: 130px;
-  width: 5em;
-  margin: 3px 3px 10px;
+  height: 150px;
+  width: 7em;
+  /* margin: 10px 3px 10px; */
+  margin-top: 20px;
   border: 0.1em solid #fff;
 }
 
-.display-books p {
-  
-  max-height: 80px;
-  min-height: 80px;
-  font-size: 1em;
+.display-books h6 {
+   margin-top: 20px;
+   font-size: 1.03em;
 }
-
 
                           /*                Style of the sidebar menu                         */
 #page-wrap {
