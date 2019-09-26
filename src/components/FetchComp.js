@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Loading from './Loading';
 import noimage from "../noimage.jpg";
+// import { Modal } from 'react-modal'
+import Popup from "reactjs-popup";
+import '../App.css';
 
 
 class FetchComp extends Component {
@@ -8,55 +10,60 @@ class FetchComp extends Component {
     super();
     this.state = {
       books: [],
-      category: ""
+      category: "",
     };
+
   }
-  //api call
-  // fetchBooks(){
-  //   fetch("http://localhost:15350/api/book/all")
-  //     .then(response => response.json())
-  //     .then(data => {
-  //        this.setState({books: data,})
-  //       })
-  //     .catch(err => {
-  //       console.log(err);
-  //     })
-  // }
 
-
-  // 
-  makeFetch(category = "Angular") {
+  // Here we set the default category to JavaScript
+  makeFetch(category = "JavaScript") {
     let url = `http://localhost:15350/api/book/category/${category}`;
     fetch(url)
-    .then(response => response.json())
-    .then(data => 
-      this.setState({ books: data, category: category.name}))  
+      .then(response => response.json())
+      .then(data =>
+        this.setState({ books: data, category: category.name }))
   }
+
+
   componentDidMount() {
     this.makeFetch();
   }
 
 
+  //In the render method we are mapping through API to get the title and the image of the books
   render() {
     const array = this.state.books;
+
     let list = array.map(book =>
-        
-          <div key={book.id} className="col-sm-2 display-books"> 
-          <img src={book.imageLink} height="170px" width="130px" alt={noimage} />
-          <h6>{book.title}</h6>
-          
+      <div key={book.id} className="col-sm-2 display-books">
+        {/* Pop up box with description when click on image */}
+        <Popup trigger={<img src={book.imageLink} id="myImg" height="170px" width="130px" alt={noimage}></img>} modal>
+          <div className="popup" onScroll="myFunc">
+          <img src={book.imageLink} className = "imagePopup" />
+            <p className="title">
+            
+              {book.title}
+            </p>
+            <p className="basic-info">
+              Pages: {book.pageCount}
+              <br />
+              Published date: {book.publishedDate}
+            </p>
+            <p className="subtitle">
+              {book.subtitle}
+            </p>
+
           </div>
-               
+        </Popup>
+        <h6>{book.title}</h6>
+      </div>
     )
-    return ( 
+    return (
       <div className="container">
         {list}
       </div>
     )
   }
 }
-
-
-
 
 export default FetchComp;

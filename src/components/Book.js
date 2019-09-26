@@ -11,10 +11,10 @@ class Book extends React.Component {
   }
 
   makeFetch(id) {
-    const url = "http://localhost:15350/api/book/" + id;
+    const url = "http://localhost:15350/api/book/all" + id;
     fetch(url)
       .then(response => response.json())
-      .then(responseJson => this.setState({ book: responseJson }));
+      .then(data => this.setState({ book: data }));
   }
 
   render() {

@@ -6,10 +6,12 @@ import Menu from "./components/Menu";
 import FilterLeft from "./components/FilterLeft";
 
 import SideBar from './sidebar';
-import Book from "./components/Book";
+// import Book from "./components/Book";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import FetchComp from "./components/FetchComp";
 import SearchForm from "./components/SearchForm"
+
+//This is a single page application that takes books from an api using React js. Our default category is JavaScript.
 
 class App extends React.Component {
   constructor() {
@@ -27,13 +29,7 @@ class App extends React.Component {
   // this.makeFetch(text);
   };
 
-  // makeFetch(category = "JavaScript") {
-  //   let url = "http://localhost:15350/api/book/category/{JavaScript}";
-  //   fetch(url)
-  //   .then(response => response.json())
-  //   .then(jsonResponse => 
-  //     this.setState({ books: jsonResponse.items, category: category}))
-  // }
+
 
   render() {
     const books = this.state.books;
@@ -75,12 +71,10 @@ class App extends React.Component {
               )}
             />
             <Route
-              path="/book/:bookUrl"
-              render={props => <Book {...props} books={books} />}
+              // path="/book/:bookUrl"
+              // render={props => <Book {...props} books={books} />}
             />
           </Switch>
-          
-
         </div>
       </Router>
     );
