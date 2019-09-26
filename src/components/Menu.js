@@ -40,7 +40,8 @@ class Menu extends React.Component {
 
     const currentCategory = this.props.currentCategory;
     const actualListItems = listItemsText.map(item => {
-      const category = "/" + item.name;
+      const category = "/" + item.subCategories;
+      console.log(item.subCategories[0].name);
       if (currentCategory === item.name) {
         return (
           <MenuListItem
@@ -55,7 +56,7 @@ class Menu extends React.Component {
           <MenuListItem
             text={item.name}
             isActive={false}
-            key={item.categoryId}
+            key={item.text}
             url={category}
           />
         );

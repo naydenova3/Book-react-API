@@ -33,7 +33,9 @@ class FetchComp extends Component {
   //In the render method we are mapping through API to get the title and the image of the books
   render() {
     const array = this.state.books;
-
+    console.log(array);
+    const arrays = this.state.category;
+    console.log(arrays);
     let list = array.map(book =>
       <div key={book.id} className="col-xl-4 col-lg-3 col-md-4 col-sm-2 display-books">
         {/* Pop up box with description when click on image */}

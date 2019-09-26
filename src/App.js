@@ -5,7 +5,7 @@ import Details from "./components/Details";
 import Menu from "./components/Menu";
 import FilterLeft from "./components/FilterLeft";
 import SideBar from './SideBar';
-import Book from "./components/Book";
+import SearchCategory from "./components/SearchCategory";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import FetchComp from "./components/FetchComp";
 import SearchForm from "./components/SearchForm"
@@ -17,7 +17,7 @@ class App extends React.Component {
     super();
     this.state = {
       books: [],
-      category: {}
+      category: ""
     };
   }
 
@@ -41,7 +41,7 @@ class App extends React.Component {
           <SideBar />
           <FilterLeft />
           <FetchComp />
-          
+          <SearchCategory />
           <Switch>
 
             <Route
@@ -69,10 +69,10 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route
+            {/* <Route
               path="/book/:bookUrl"
               render={props => <Book {...props} books={books} />}
-            />
+            /> */}
           </Switch>
         </div>
       </Router>

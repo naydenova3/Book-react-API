@@ -3,6 +3,7 @@ import React from 'react';
 class SubCategory extends React.Component {
     render(){
         const text = this.props.item.name;
+        
         const url = "/" + text;
         return (
             <div className="dropdown-container">
