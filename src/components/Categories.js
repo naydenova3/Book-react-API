@@ -30,8 +30,7 @@ class Categories extends React.Component {
     let listItem = categList.map(d =>
       <div key={d.id} >
         {d.name}
-      </div> 
-               
+      </div>         
     )
     return (
         <div>

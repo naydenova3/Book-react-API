@@ -4,7 +4,6 @@ import "./style.css";
 import Details from "./components/Details";
 import Menu from "./components/Menu";
 import FilterLeft from "./components/FilterLeft";
-import Categories from "./components/Categories";
 import SideBar from './SideBar';
 import Book from "./components/Book";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";

@@ -51,10 +51,13 @@ form {
 .nav-link {
   color: #fff !important;
   font-size: 1.5em !important;
+  margin-right: 2em;
+  
 }
 
 .nav-link:hover {
   cursor: pointer;
+  color: #17a2b8 !important;
 }
 
 .active {
