@@ -9,6 +9,9 @@ import SideBar from './SideBar';
 import Book from "./components/Book";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import FetchComp from "./components/FetchComp";
+import SearchForm from "./components/SearchForm"
+
+//This is a single page application that takes books from an api using React js. Our default category is JavaScript.
 
 class App extends React.Component {
   constructor() {
@@ -26,7 +29,6 @@ class App extends React.Component {
   // this.makeFetch(text);
   };
 
- 
 
   render() {
     const books = this.state.books;
@@ -42,6 +44,7 @@ class App extends React.Component {
           <FetchComp />
           
           <Switch>
+
             <Route
               path="/"
               exact
@@ -68,12 +71,10 @@ class App extends React.Component {
               )}
             />
             <Route
-              path="/book/:bookUrl"
-              render={props => <Book {...props} books={books} />}
+              // path="/book/:bookUrl"
+              // render={props => <Book {...props} books={books} />}
             />
           </Switch>
-          
-
         </div>
       </Router>
     );

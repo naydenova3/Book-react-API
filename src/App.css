@@ -147,3 +147,48 @@
 .fa {
   margin-right: 1em;
 }
+
+/*                                                                Popup styles                               */
+.popup {
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+  border: 1px solid black;
+  height: 350px;
+  width: 500px; 
+  overflow: scroll;
+  
+  text-align: left !important;
+}
+
+.imagePopup {
+  width: 110px !important;
+  height: 140px !important; 
+  display: inline-block;
+  margin-left: 1.5em !important;
+  margin-top: 1.5em !important;
+}
+
+.title {
+  padding: 1.5em;
+  width: 250px;
+  /* text-align: right !important; */
+  display: inline-block;
+  font-size: 1.5em;
+  float: right;
+}
+
+.basic-info {
+ text-align: left;
+ padding: 3px;
+}
+.subtitle {
+  text-align: left;
+  padding: 5px;
+}
+.popup-content {
+  height: 350px !important;
+  width: 500px !important;
+  position: relative !important;
+  background: #010920 !important;
+  border: 0.05em solid #fff !important;
+  /* border-radius: 5% !important; */
+}
