@@ -173,7 +173,7 @@
   /* text-align: right !important; */
   display: inline-block;
   font-size: 1.5em;
-  float: right;
+  /* float: right; */
 }
 
 .basic-info {

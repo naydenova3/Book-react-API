@@ -1,5 +1,5 @@
 import React from "react";
-import BookDetails from "./BookDetails";
+import FetchComp from "./FetchComp";
 import Loading from "./Loading";
 
 class Details extends React.Component {
@@ -15,7 +15,7 @@ class Details extends React.Component {
   render() {
     const books = this.props.books;
     const listItems = books.map(book => (
-      <BookDetails bookDetails={book} key={book.id} />
+      <FetchComp FetchComp={book} key={book.id} />
     ));
     const category = this.props.match.params.category;
     if (category !== undefined) {
@@ -23,7 +23,7 @@ class Details extends React.Component {
         return (
           <div>
             <h2>Book search for {this.props.match.params.category}</h2>
-            <Loading />
+            {/* <Loading /> */}
           </div>
         );
       } else {
