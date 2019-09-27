@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: url("bookshelves.jpg");
+  background-color: #344a64;
   margin: 0;
   padding: 0;
   background-size: cover;
@@ -86,15 +86,16 @@ border: 0.05em solid #17a2b8;
 
 .sidebar-header {
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
+  margin-top: 5em;
 }
 
 .filter-comp li a {
   color: #fff;
   text-align: center;
-  font-size: 1.15em;
+  font-size: 1.30em;
   text-decoration: none;
-  margin-bottom: 1.2em;
+  margin-bottom: 1.em;
 }
 
 .filter-comp li a:hover {
@@ -102,7 +103,7 @@ color: #17a2b8;
 }
 
 .filter-comp i {
-padding-right: 0.8em;
+padding-right: 0.3em;
 display: inline-block;
 font-size: 1em;
 color: #17a2b8;
@@ -115,8 +116,8 @@ margin-left: 0.5em;
 
 
 
-/* Same dropdown links padding*/
-#sidebar.active ul ul a {
+/* Some dropdown links padding*/
+#sidebar.active ul a {
 padding: 10px !important;
 }
 
@@ -132,7 +133,7 @@ transform: translateX(100%);
 
 #sidebarCollapse {
 width: 40px;
-height: 40px;
+height: 38px;
 background: #011933;
 }
 
@@ -159,18 +160,10 @@ opacity: 1;
 margin: 15px auto;
 }
 
-.wrapper {
-top: 300px;
-left: 1200px;
-  display: flex;
-align-items: stretch;
-perspective: 3500px;
-}
+
 
 #sidebar {
-margin-left: 106em;
-min-width: 220px;
-max-width: 220px;
+max-width: 250px;
 background-color: #011933;
 color: #fff;
 padding: 1em;
@@ -179,7 +172,7 @@ transform-origin: center left; /* Set the transformed position of sidebar to cen
 }
 
 #sidebar.active {
-margin-left: -220px;
+margin-left: 2000px;
 }
 
 #load {
@@ -191,6 +184,3 @@ list-style-type: none;
 color: #000;
 }
 
-.list {
-  background-color: rgb(85, 84, 84);
-}

@@ -1,6 +1,5 @@
 import React from "react";
 import SearchForm from "./SearchForm";
-
 import MenuListItem from "./MenuListItem";
 
 class Menu extends React.Component {
@@ -18,7 +17,6 @@ class Menu extends React.Component {
           return results.json();
       }).then(data => 
           this.setState({category: data})
-          
       )
     }
     componentDidMount() {
@@ -32,7 +30,7 @@ class Menu extends React.Component {
   render() {
     const listItemsText = this.state.category; 
     let listItem = listItemsText.map(d =>
-      <div>
+      <div key={d.id}>
         {d.name}
       </div>         
     )
@@ -40,7 +38,7 @@ class Menu extends React.Component {
     const currentCategory = this.props.currentCategory;
     const actualListItems = listItemsText.map(item => {
       const category = "/" + item.subCategories;
-      console.log(item.subCategories[0].name);
+      //console.log(item.subCategories[0].name);
       if (currentCategory === item.name) {
         return (
           <MenuListItem
@@ -55,7 +53,7 @@ class Menu extends React.Component {
           <MenuListItem
             text={item.name}
             isActive={false}
-            key={item.text}
+            key={item.id}
             url={category}
           />
         );

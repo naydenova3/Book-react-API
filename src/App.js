@@ -19,7 +19,8 @@ class App extends React.Component {
     super();
     this.state = {
       books: [],
-      category: []
+      category: [],
+      search: false
     };
   }
 
@@ -30,18 +31,16 @@ class App extends React.Component {
   //     .then(data =>
   //       this.setState({ books: data}))
   // }
-
-  fetchCategory(category = "JavaScript") {
+  //Лъчо
+  fetchCategory(category = "default") {
     let url = `http://localhost:15350/api/book/category/${category}`;
+    if (category === "default"){
+      url = "http://localhost:15350/api/book/all"
+    }
     fetch(url)
       .then(response => response.json())
       .then(data =>
-        this.setState({ books: data}))
-  }
-
-  componentDidMount() {
-    // this.fetchAllBooks();
-    this.fetchCategory();
+        this.setState({ books: data, search: false}))
   }
 
   handleSearch = text => {
@@ -50,12 +49,17 @@ class App extends React.Component {
     }
     // this.makeFetch(text);
   };
+  //Лъчо
+  searchApi = text => {
+    const url = `http://localhost:15350/api/book/search${text}`;
+    fetch(url)
+    .then(response => response.json())
+    .then(json => this.setState({books: json, search: true}))
+  }
 
 
   render() {
     const array = this.state.books;
-
-    
     return (
       <Router>
         <Menu
@@ -66,10 +70,7 @@ class App extends React.Component {
         <FilterLeft />
         <div>
           
-          {/* <FetchComp /> */}
-
           <Switch>
-
             <Route
               path="/"
               exact
@@ -79,6 +80,9 @@ class App extends React.Component {
                   books={array}
                   category={this.state.category}
                   search={this.handleSearch}
+                  //Лъчо
+                  actualSearch={this.searchApi}
+                  isSearch={this.state.search}
                 />
               )}
 
@@ -92,6 +96,9 @@ class App extends React.Component {
                   books={array}
                   category={this.state.category}
                   search={this.handleSearch}
+                  //Лъчо
+                  actualSearch={this.searchApi}
+                  isSearch={this.state.search}
                 />
               )}
             />
