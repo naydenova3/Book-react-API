@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
-import noimage from "../noimage.jpg";
-// import { Modal } from 'react-modal'
-import Popup from "reactjs-popup";
-import '../App.css';
 
 
-class FetchComp extends Component {
-  constructor() {
-    super();
-    this.state = {
-      books: [],
-      category: "",
-    };
+const Popup = () => {
 
+<<<<<<< HEAD:src/components/FetchComp.js
   }
 
   // Here we set the default category to JavaScript
@@ -36,6 +27,11 @@ class FetchComp extends Component {
     console.log(array);
     const arrays = this.state.category;
     console.log(arrays);
+=======
+ return (
+    // const array = this.state.books;
+
+>>>>>>> 608f06f831f6d6e13886d712ab29c37f890d03fa:src/components/Popup.js
     let list = array.map(book =>
       <div key={book.id} className="col-xl-4 col-lg-3 col-md-4 col-sm-2 display-books">
         {/* Pop up box with description when click on image */}
@@ -60,12 +56,7 @@ class FetchComp extends Component {
         <h6>{book.title}</h6>
       </div>
     )
-    return (
-      <div className="container">
-        {list}
-      </div>
-    )
+ )
   }
 }
-
-export default FetchComp;
+  export default Popup;
