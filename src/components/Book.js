@@ -37,11 +37,11 @@ class Book extends React.Component {
         return (
           <div className="row">
             <div className="col-md-6">
-              <img src={book.volumeInfo.imageLinks.thumbnail} alt={noimage} />
+              <img src={book.imageLink} alt={noimage} />
             </div>
             <div className="col-md-6">
-              <p>Title: {book.volumeInfo.title}</p>
-              <p>Pages: {book.volumeInfo.pageCount}</p>
+              <p>Title: {book.title}</p>
+              <p>Pages: {book.pageCount}</p>
             </div>
           </div>
         );
@@ -53,8 +53,8 @@ class Book extends React.Component {
               <img src={noimage} alt={noimage} />
             </div>
             <div className="col-md-6">
-              <p>Title: {book.volumeInfo.title}</p>
-              <p>Pages: {book.volumeInfo.pageCount}</p>
+              <p>Title: {book.title}</p>
+              <p>Pages: {book.pageCount}</p>
             </div>
           </div>
         );

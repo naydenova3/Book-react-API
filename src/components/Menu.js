@@ -31,7 +31,6 @@ class Menu extends React.Component {
 
   render() {
     const listItemsText = this.state.category; 
-    console.log(listItemsText);
     let listItem = listItemsText.map(d =>
       <div>
         {d.name}

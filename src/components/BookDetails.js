@@ -1,5 +1,5 @@
 import React from "react";
-import noimage from "../noimage.png";
+import noimage from "../noimage.jpg";
 import { Link } from "react-router-dom";
 
 class BookDetails extends React.Component {
@@ -26,12 +26,7 @@ class BookDetails extends React.Component {
       if (this.state.toogle) {
         return (
           <div className="col-sm-2">
-            <img
-              src={book.imageLink}
-              height="170px"
-              width="130px"
-              alt={noimage}
-            />
+            <img src={book.imageLink} alt={noimage} />
             <Link to={link}>
               <p className="person-name" onClick={this.activateToogle}>
                 Title: {book.title}
@@ -47,14 +42,10 @@ class BookDetails extends React.Component {
         return (
           <div className="col-sm-2">
             <img
-              src={book.imageLink}
-              height="170px"
-              width="130px"
-              alt={noimage}
-            />
+              src={book.imageLink} alt={noimage} />
             <Link to={link}>
               <p className="person-name" onClick={this.activateToogle}>
-                Title: {book.volumeInfo.title}
+                Title: {book.title}
               </p>
             </Link>
           </div>
@@ -65,7 +56,7 @@ class BookDetails extends React.Component {
       if (this.state.toogle) {
         return (
           <div className="col-sm-2">
-            <img src={noimage} height="170px" width="130px" alt={noimage} />
+            <img src={noimage} alt={noimage} />
             <Link to={link}>
               <p className="person-name" onClick={this.activateToogle}>
                 Title: {book.title}
@@ -80,7 +71,7 @@ class BookDetails extends React.Component {
       } else {
         return (
           <div className="col-sm-3">
-            <img src={noimage} height="170px" width="130px" alt={noimage} />
+            <img src={noimage} alt={noimage} />
             <Link to={link}>
               <p className="person-name" onClick={this.activateToogle}>
                 Title: {book.title}
