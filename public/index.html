@@ -38,6 +38,7 @@
       $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
         $(this).toggleClass('active');
+        fetchCategory(category = "default");
       });
     });
   </script>

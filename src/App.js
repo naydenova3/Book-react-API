@@ -8,9 +8,8 @@ import FilterLeft from "./components/FilterLeft";
 import SideBar from './SideBar';
 import SearchCategory from "./components/SearchCategory";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Popup from "reactjs-popup";
 import SearchForm from "./components/SearchForm"
-import noimage from "./noimage.jpg";
+
 
 //This is a single page application that takes books from an api using React js. Our default category is JavaScript.
 
@@ -35,19 +34,21 @@ class App extends React.Component {
   fetchCategory(category = "default") {
     let url = `http://localhost:15350/api/book/category/${category}`;
     if (category === "default"){
+      console.log(category);
       url = "http://localhost:15350/api/book/all"
     }
     fetch(url)
       .then(response => response.json())
       .then(data =>
         this.setState({ books: data, search: false}))
+  
   }
-
+  
   handleSearch = text => {
     if (text === this.state.category || text === undefined) {
       return;
     }
-    // this.makeFetch(text);
+    this.fetchCategory(text);
   };
   //Лъчо
   searchApi = text => {
@@ -72,7 +73,7 @@ class App extends React.Component {
           
           <Switch>
             <Route
-              path="/"
+              path="/default"
               exact
               render={props => (
                 <Details
@@ -80,8 +81,7 @@ class App extends React.Component {
                   books={array}
                   category={this.state.category}
                   search={this.handleSearch}
-                  //Лъчо
-                  actualSearch={this.searchApi}
+                  //actualSearch={this.searchApi}
                   isSearch={this.state.search}
                 />
               )}
@@ -96,7 +96,6 @@ class App extends React.Component {
                   books={array}
                   category={this.state.category}
                   search={this.handleSearch}
-                  //Лъчо
                   actualSearch={this.searchApi}
                   isSearch={this.state.search}
                 />

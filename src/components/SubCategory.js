@@ -4,7 +4,7 @@ class SubCategory extends React.Component {
     render(){
         const text = this.props.item.name;
         
-        const url = "/" + text;
+        const url = "/" + text + "?search=" + text;
         return (
             <div className="dropdown-container">
                 <a href={url} className="bm-item">

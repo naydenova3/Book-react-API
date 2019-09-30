@@ -28,9 +28,9 @@ class Details extends React.Component {
   render() {
     //Лъчо
     const search = this.props.location.search;
-    console.log(search);
     const category = this.props.match.params.category;
     const books = this.props.books;
+    
     const listItems = books.map(book => (
       <div key={book.id} id={book.id} className="col-xl-4 col-lg-3 col-md-4 col-sm-4 display-books">
         {/* Pop up box with description when click on image */}
