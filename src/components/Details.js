@@ -4,7 +4,7 @@ import Popup from "reactjs-popup";
 import noimage from "./noimage.jpg";
 
 class Details extends React.Component {
-  //Лъчо
+  
   
   //check category
   //fetch items for current category
@@ -26,7 +26,7 @@ class Details extends React.Component {
   }
 
   render() {
-    //Лъчо
+    
     const search = this.props.location.search;
     const category = this.props.match.params.category;
     const books = this.props.books;

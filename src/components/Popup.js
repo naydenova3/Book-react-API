@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 
 
-const Popup = () => {
-
-<<<<<<< HEAD:src/components/FetchComp.js
-  }
+class Popup extends Component {
 
   // Here we set the default category to JavaScript
-  makeFetch(category = "JavaScript") {
-    let url = `http://localhost:15350/api/book/category/${category}`;
+  makeFetch() {
+    let url = `http://localhost:15350/api/book/all`;
     fetch(url)
       .then(response => response.json())
       .then(data =>
-        this.setState({ books: data, category: category.name }))
+        this.setState({ books: data }))
   }
 
 
@@ -27,11 +24,6 @@ const Popup = () => {
     console.log(array);
     const arrays = this.state.category;
     console.log(arrays);
-=======
- return (
-    // const array = this.state.books;
-
->>>>>>> 608f06f831f6d6e13886d712ab29c37f890d03fa:src/components/Popup.js
     let list = array.map(book =>
       <div key={book.id} className="col-xl-4 col-lg-3 col-md-4 col-sm-2 display-books">
         {/* Pop up box with description when click on image */}
@@ -56,7 +48,6 @@ const Popup = () => {
         <h6>{book.title}</h6>
       </div>
     )
- )
   }
 }
   export default Popup;
