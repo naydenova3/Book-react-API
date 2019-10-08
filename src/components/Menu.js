@@ -9,36 +9,11 @@ class Menu extends React.Component {
       category: [],
     };
   }
-
-
-  makeFetch() {
-      fetch(`http://localhost:15350/api/category/all`)
-      .then(results => {
-          return results.json();
-      }).then(data => 
-          this.setState({category: data})
-      )
-    }
-    componentDidMount() {
-      this.makeFetch();
-    }
-
-  handleSearch = text => {
-    this.props.search(text);
-  };
-
   render() {
-    const listItemsText = this.state.category; 
-    let listItem = listItemsText.map(d =>
-      <div key={d.id}>
-        {d.name}
-      </div>         
-    )
-
+    const listItemsText = this.state.category;
     const currentCategory = this.props.currentCategory;
     const actualListItems = listItemsText.map(item => {
       const category = "/" + item.subCategories;
-      //console.log(item.subCategories[0].name);
       if (currentCategory === item.name) {
         return (
           <MenuListItem
@@ -61,17 +36,6 @@ class Menu extends React.Component {
     });
     return (
       <nav className="navbar navbar-expand-lg bgNav">
-        
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-        </button>
         <span className="navbar-brand ">Book Catalog</span>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">{actualListItems}</ul>
@@ -79,14 +43,13 @@ class Menu extends React.Component {
         </div>
         <nav className="navbar">
           <div className="container-fluid">
-              <button type="button" id="sidebarCollapse" className="btn btn-info">
-                <i className="fa fa-filter  fa-lg"></i>
-              </button>
-            </div>
+            <button type="button" id="sidebarCollapse" className="btn btn-info">
+              <i className="fa fa-filter  fa-lg"></i>
+            </button>
+          </div>
         </nav>
       </nav>
     );
   }
 }
-
 export default Menu;

@@ -34,5 +34,4 @@ class Category extends React.Component{
         )
     }
 }
-
 export default Category;

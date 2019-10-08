@@ -3,7 +3,8 @@
 }
 
 body {
-  background-color: #344a64;
+  background-color: #9bb0ca;
+  /* background-color: #e6eeff; */
   margin: 0;
   padding: 0;
   background-size: cover;
@@ -24,7 +25,7 @@ body {
   border-radius: 5px;
 
   font-weight: bold;
-  color: #fff;
+color: #fff;
   
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
