@@ -34,6 +34,7 @@ class App extends React.Component {
   }
 
   handleSearch = text => {
+    console.log("handleSearch")
     if (text === this.state.category || text === undefined) {
       return "handleSearch";
     }
@@ -50,10 +51,12 @@ class App extends React.Component {
 
   }
 
+
   render() {
     const array = this.state.books;
     console.log(array);
     return (
+
       <Router>
         <Menu
           search={this.handleSearch}
@@ -62,6 +65,7 @@ class App extends React.Component {
         
         <SideBar />
         <FilterLeft />
+        {/* <div>{ListBooks}</div> */}
         <div>
 
           <Switch>

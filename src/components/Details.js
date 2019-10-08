@@ -41,7 +41,6 @@ class Details extends React.Component {
 }
 
   render() {
-
     const search = this.props.location.search;
     const category = this.props.match.params.category;
     const books = this.props.books;
