@@ -58,6 +58,7 @@
     height: 300px;
     width: 220px;
     color: #fff;
+    overflow: hidden;
     
 }
 
@@ -187,7 +188,8 @@
 
 .title {
   padding: 1.5em;
-  width: 250px;
+  width: 350px;
+  overflow: auto;
   /* text-align: right !important; */
   display: inline-block;
   font-size: 1.5em;

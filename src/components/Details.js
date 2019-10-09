@@ -16,15 +16,6 @@ class Details extends React.Component {
   //fetch items for current category
   //display new items
 
-  // makeFetch() {
-  //   let url = `http://localhost:15350/api/book/all`;
-  //   fetch(url)
-  //     .then(response => response.json())
-  //     .then(data =>
-  //       this.setState({ books: data }))
-  // }
-
-
   componentDidMount() {
     const category = this.props.match.params;
     const search = this.props.location.search;
@@ -39,6 +30,8 @@ class Details extends React.Component {
      this.props.actualSearch(search);
     }
 }
+
+
 
   render() {
     const search = this.props.location.search;
@@ -66,7 +59,6 @@ class Details extends React.Component {
         </Popup>
         <h6>{book.title}</h6>
       </div>
-
     ));
     if (search !== undefined) {
       if (this.props.isSearch) {

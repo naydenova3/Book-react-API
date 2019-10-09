@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import "./App.css";
 import "./style.css";
 import Details from "./components/Details";
@@ -21,13 +21,9 @@ class App extends React.Component {
     };
   }
 
-
   fetchCategory(category = "default") {
     let url = `http://localhost:15350/api/book/category/${category}`;
-    if (category === "default") {
-      console.log(category);
-      url = "http://localhost:15350/api/book/all"
-    }fetch(url)
+     fetch(url)
       .then(response => response.json())
       .then(data =>
         this.setState({ books: data, search: false }))
@@ -47,33 +43,25 @@ class App extends React.Component {
     fetch(url)
       .then(response => response.json())
       .then(json => this.setState({ books: json, search: true }))
-    console.log("searchApi")
-
   }
-
 
   render() {
     const array = this.state.books;
-    console.log(array);
     return (
-
       <Router>
         <Menu
           search={this.handleSearch}
           currentCategory={this.state.category}
         />
-        
         <SideBar />
         <FilterLeft />
-        {/* <div>{ListBooks}</div> */}
         <div>
-
           <Switch>
             <Route
               exact
               path="/"
-              component = {DisplayAllBooks}
-          />
+              component={DisplayAllBooks}
+            />
             <Route
               exact
               path="/:category"
@@ -88,10 +76,6 @@ class App extends React.Component {
                 />
               )}
             />
-            {/* <Route
-              path="/book/:bookUrl"
-              render={props => <Book {...props} books={array} />}
-            /> */}
           </Switch>
         </div>
       </Router>

@@ -1,10 +1,5 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
-  background-color: #9bb0ca;
-  /* background-color: #e6eeff; */
+  background-color: #e6eeff;
   margin: 0;
   padding: 0;
   background-size: cover;
@@ -102,6 +97,9 @@ border: 0.05em solid #17a2b8;
 .filter-comp li a:hover {
 color: #17a2b8;
 }
+.filter-comp li {
+list-style-type: none;
+}
 
 .filter-comp i {
 padding-right: 0.3em;
@@ -125,7 +123,7 @@ padding: 10px !important;
 /* Changing the arrow position to bottom center position, 
 translateX(50%) works with right: 50% 
 to accurately  center the arrow */
-#sidebar.active .dropdown-toggle::after {
+ #sidebar.active .dropdown-toggle::after {
 top: auto;
 bottom: 40px;
 right: 100%;
@@ -142,13 +140,12 @@ background: #011933;
   width: 80%;
   height: 2px;
   margin: 0 auto;
-  display: block;
+  display: none;
   background: #555;
-}
+} 
 
-
-#sidebarCollapse span:nth-of-type(2) {
 /* second one is not visible */
+#sidebarCollapse span:nth-of-type(2) {
   opacity: 0;
 }
 
@@ -159,6 +156,7 @@ transform: none;
 /* all bars are visible */
 opacity: 1;
 margin: 15px auto;
+display: block;
 }
 
 
@@ -168,20 +166,18 @@ max-width: 250px;
 background-color: #011933;
 color: #fff;
 padding: 1em;
-transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
-transform-origin: center left; /* Set the transformed position of sidebar to center right side. */
-}
+transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665); 
+transform-origin: center left;  
+/* Set the transformed position of sidebar to center right side. */
+ }
 
 #sidebar.active {
 margin-left: 2000px;
-}
+} 
 
 #load {
 color: #fff;
 }
 
-.filter-comp li {
-list-style-type: none;
-color: #000;
-}
+
 

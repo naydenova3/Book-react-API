@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Popup from "reactjs-popup";
 import noimage from "./noimage.jpg";
 
@@ -14,11 +15,7 @@ class DisplayAllBooks extends React.Component {
     let url = "http://localhost:15350/api/book/all"
     fetch(url)
       .then(response => response.json())
-      .then(data => {
-       this.setState({ books: data})
-      {console.log(data)} }
-      )
-  }
+      .then(data => this.setState({ books: data}))}
 
   componentDidMount() {
    this.fetchAll();
@@ -27,7 +24,6 @@ class DisplayAllBooks extends React.Component {
         return (
             <div>
                 {this.state.books.map((book)=> (
-                   // <DisplayAll book = {book} key = {book.id} />
                    <div key={book.id} id={book.id} className="col-xl-4 col-lg-3 col-md-4 col-sm-4 display-books">
                    {/* Pop up box with description when click on image */}
                    <Popup trigger={<img src={book.imageLink} id="myImg" alt={noimage}></img>} modal>
@@ -49,6 +45,7 @@ class DisplayAllBooks extends React.Component {
                    <h6>{book.title}</h6>
                  </div>
                 ))}
+
             </div>
         )
     }
